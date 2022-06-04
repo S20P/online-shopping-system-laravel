@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 @section('content')
 
-<section class="section-pagetop bg-dark">
+<section class="section-pagetop bg-light">
         <div class="container clearfix">
             <h2 class="title-page">Checkout</h2>
         </div>
@@ -159,7 +159,9 @@
 
                                     @endphp
                                     @if($product->image)
-                  <img src="{{ asset('images/product/'.$product->image) }}" style="height: 100px; width: 150px;">
+                  <img src="{{ asset('images/product/'.$product->image) }}" style="height: auto;
+    max-height: 100px;
+    width: 80px;">
                                     @endif
                                     </th>                                                            
                                     <td>{{ $item->name }}</td> 

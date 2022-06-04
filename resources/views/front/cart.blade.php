@@ -31,7 +31,9 @@
                             <tr>
                               <td class="hidden pb-4 md:table-cell">
                                 <a href="#">
-                                  <img src="{{ $item->attributes->image }}" class="w-20 rounded" alt="Thumbnail">
+                                  <img src="{{ asset('images/product/'.$item->attributes->image) }}" class="w-20 rounded" alt="Thumbnail" style="height: auto;
+    max-height: 100px;
+    width: 80px;">
                                 </a>
                               </td>
                               <td>
@@ -49,7 +51,7 @@
                                       <input type="hidden" name="id" value="{{ $item->id}}" >
                                     <input type="number" name="quantity" value="{{ $item->quantity }}" 
                                     class="w-6 text-center bg-gray-300" />
-                                    <button type="submit" class="px-2 pb-2 ml-2 text-white bg-blue-500">update</button>
+                                    <button type="submit" class="px-2 pb-2 ml-2 text-white bg-dark">update</button>
                                     </form>
                                   </div>
                                 </div>
@@ -63,7 +65,7 @@
                                 <form action="{{ route('cart.remove') }}" method="POST">
                                   @csrf
                                   <input type="hidden" value="{{ $item->id }}" name="id">
-                                  <button class="px-4 py-2 text-white bg-red-600">x</button>
+                                  <button class="px-4 py-2 text-white bg-dark">x</button>
                               </form>
                                 
                               </td>
@@ -78,7 +80,7 @@
                         <div>
                           <form action="{{ route('cart.clear') }}" method="POST">
                             @csrf
-                            <button class="px-6 py-2 text-red-800 bg-red-300">Remove All Cart</button>
+                            <button class="px-6 py-2 text-white bg-dark">Remove All Cart</button>
                           </form>
                         </div>
 

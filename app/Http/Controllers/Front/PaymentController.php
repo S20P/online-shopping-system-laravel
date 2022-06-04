@@ -5,8 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use Redirect;
-use URL;
+
 use Cart;
 use App\Models\Orders as Order;
 use App\Models\Products as Product;
@@ -45,7 +44,7 @@ class PaymentController extends Controller
                   $notes =  $params->notes;
 
 
-           $grand_total =   \Cart::getSubTotal();  
+           $grand_total =  Cart::getSubTotal();  
 
           // dd($grand_total);  
            $amountToBePaid = sprintf('%0.2f', $grand_total);
@@ -74,7 +73,7 @@ class PaymentController extends Controller
 
          $stripeCharge =  Stripe\Charge::create ([
                   // "amount" => 100*100,
-                  "amount" => $grand_total * 100,
+                  "amount" => $amountToBePaid * 100,
                   "currency" => $currency,
                   "source" => $request->stripeToken,
                   "description" => $notes ? $notes : "This is Online shoping payment",
@@ -101,6 +100,7 @@ class PaymentController extends Controller
         $payment->payment_date = date("Y-m-d");
         $payment->customer_id  = \Auth::user()->id;
         $payment->customer_name  = \Auth::user()->name;
+        $payment->save();
 
         Cart::clear();
 

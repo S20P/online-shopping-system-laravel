@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\DashBoardController;
 use App\Http\Controllers\Front\CheckoutController;
 use App\Http\Controllers\Front\PaymentController;
+use App\Http\Controllers\User\OrderController;
 
 
 Route::group(['middleware' => 'auth'], function () {
@@ -21,6 +22,13 @@ Route::group(['middleware' => 'auth'], function () {
       Route::get('stripe', [CheckoutController::class, 'stripe'])->name('stripe');
       Route::post('stripe/payment', [PaymentController::class, 'stripePost'])->name('payWithstripe');
 
+    
+     Route::group(['prefix' => 'orders'], function () {
+           Route::get('/', [OrderController::class,'index'])->name('user.orders.index');		 
+		   Route::get('/{order}/show',[OrderController::class,'show'])->name('user.orders.show');
+       });
 
+
+  
  });
 

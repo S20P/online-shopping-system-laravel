@@ -1,15 +1,15 @@
-@extends('admin.layouts.master')
+@extends('user.layouts.master')
 @section('content')
      <div class="pagetitle">
       <h1>Orders </h1>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
-           <li class="breadcrumb-item"><a href="{{route('admin.orders.index')}}">Orders</a></li>
+           <li class="breadcrumb-item"><a href="{{route('user.orders.index')}}">Orders</a></li>
           <li class="breadcrumb-item active">list</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
-    @include('admin.partials.flash')
+   
            <div class="card">
             <div class="card-body">
                <div class="d-flex card-header-flex">
@@ -44,7 +44,7 @@
                                 </td>
                                 <td class="text-center">
                                     <div class="btn-group" role="group" aria-label="Second group">
-                                        <a href="{{ route('admin.orders.show', $order->id) }}" class="btn btn-sm btn-primary"><i class="bi bi-eye"></i></a>
+                                        <a href="{{ route('user.orders.show', $order->id) }}" class="btn btn-sm btn-primary"><i class="bi bi-eye"></i></a>
                                     </div>
                                 </td>
                                 </tr>

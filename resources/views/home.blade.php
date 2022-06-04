@@ -22,7 +22,7 @@
                                 <h4 class="title"><a href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a></h4>
                             </figcaption>
                             <div class="bottom-wrap">
-                                <a href="" class="btn btn-sm btn-success float-right"><i class="fa fa-cart-arrow-down"></i> Buy Now</a>
+                              
                                 @if ($product->sale_price != 0)
                                     <div class="price-wrap h5">
                                         <span class="price"> {{ generalSetting('currency_symbol') .$product->sale_price }} </span>
@@ -37,10 +37,11 @@
                                     @csrf
                                     <input type="hidden" value="{{ $product->id }}" name="id">
                                     <input type="hidden" value="{{ $product->name }}" name="name">
-                                    <input type="hidden" value="{{ $product->price }}" name="price">
+                                    <input type="hidden" value="{{ $product->sale_price }}" name="price">
                                     <input type="hidden" value="{{ $product->image }}"  name="image">
                                     <input type="hidden" value="1" name="quantity">
-                                    <button class="px-4 py-2 text-white bg-blue-800 rounded">Add To Cart</button>
+                                    <button class="px-4 py-2 text-white bg-dark rounded">Add To Cart</button>
+                                      <button class="px-4 py-2 text-white bg-dark rounded">Buy Now</button>
                                 </form>
                             </div>
                         </figure>

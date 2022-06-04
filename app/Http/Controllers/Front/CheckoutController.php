@@ -32,11 +32,16 @@ class CheckoutController extends Controller
     public function placeOrder(CheckoutRequest $request)
     {
        $params =  $request->all();
+
+       $grand_total =   Cart::getSubTotal(); 
+
+       $amountToBePaid = sprintf('%0.2f', $grand_total);
+
         $order = Order::create([
         'order_number'      =>  'ORD-'.strtoupper(uniqid()),
         'user_id'           => auth()->user()->id,
         'status'            =>  'pending',
-        'grand_total'       =>  Cart::getSubTotal(),
+        'grand_total'       =>  $amountToBePaid,
         'item_count'        =>  Cart::getTotalQuantity(),       
         'first_name'        =>  $params['first_name'],
         'last_name'         =>  $params['last_name'],
@@ -54,40 +59,31 @@ class CheckoutController extends Controller
         if ($order) {
               $items = Cart::getContent(); 
 
-
               foreach ($items as $item)
-    		        {
-    		        	  $product = Product::where('name', $item->name)->first();
-    		        	   $orderItem = new OrderItem([
-    			                'product_id'    =>  $product->id,
-    			                'quantity'      =>  $item->quantity,
-    			                'price'         =>  $item->getPriceSum(),
+                {
+                   $getPriceSum = $item->getPriceSum();
+                   $price = sprintf('%0.2f', $getPriceSum);
+
+                    $product = Product::where('name', $item->name)->first();
+                     $orderItem = new OrderItem([
+                          'product_id'    =>  $product->id,
+                          'quantity'      =>  $item->quantity,
+                          'price'         =>  $price,
                           'order_id'      =>  $order->id
-    			            ]);
+                      ]);
                            
-    		        	   $orderItem->save();
-    		        }
+                     $orderItem->save();
+                }
 
                   return view('front.stripe',["params" => $params,"order_number"=> $order->order_number]);
-                 // $this->stripe($order);
-
-              
-		    }
+                 // $this->stripe($order);              
+        }
        
     }
 
        public function stripe($order)
-      {
-
-          return view('front.stripe',["params" => $params]);
-      }
-
-  
-
-
-
-
-
-
+        {
+            return view('front.stripe',["params" => $params]);
+        }
 
 }

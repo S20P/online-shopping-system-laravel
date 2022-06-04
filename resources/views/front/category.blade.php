@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 @section('content')
 
-<section class="section-pagetop bg-dark">
+<section class="section-pagetop bg-light">
     <div class="container clearfix">
         <h2 class="title-page">{{ $category->name }}</h2>
     </div>
@@ -22,7 +22,7 @@
                                 <h4 class="title"><a href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a></h4>
                             </figcaption>
                             <div class="bottom-wrap">
-                                <a href="" class="btn btn-sm btn-success float-right"><i class="fa fa-cart-arrow-down"></i> Buy Now</a>
+                                
                                 @if ($product->sale_price != 0)
                                     <div class="price-wrap h5">
                                         <span class="price"> {{ generalSetting('currency_symbol') .$product->sale_price }} </span>
@@ -33,6 +33,16 @@
                                         <span class="price"> {{ generalSetting('currency_symbol').$product->price }} </span>
                                     </div>
                                 @endif
+                                     <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <input type="hidden" value="{{ $product->id }}" name="id">
+                                    <input type="hidden" value="{{ $product->name }}" name="name">
+                                    <input type="hidden" value="{{ $product->sale_price }}" name="price">
+                                    <input type="hidden" value="{{ $product->image }}"  name="image">
+                                    <input type="hidden" value="1" name="quantity">
+                                    <button class="px-4 py-2 text-white bg-dark rounded">Add To Cart</button>
+                                      <button class="px-4 py-2 text-white bg-dark rounded">Buy Now</button>
+                                </form>
                             </div>
                         </figure>
                     </div>

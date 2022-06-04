@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 @section('content')
 
-<section class="section-pagetop bg-dark">
+<section class="section-pagetop bg-light">
         <div class="container clearfix">
             <h2 class="title-page">Order Completed</h2>
         </div>

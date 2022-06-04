@@ -2,7 +2,8 @@
 @section('content')
      <section class="section dashboard">
       <div class="row">
-
+     
+    Welcome, {{ auth()->user()->name }} <br>
         <!-- Left side columns -->
         <div class="col-lg-8">
           <div class="row">

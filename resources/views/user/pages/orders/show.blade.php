@@ -1,11 +1,11 @@
-@extends('admin.layouts.master')
+@extends('user.layouts.master')
 @section('content')
      <div class="pagetitle">
       <h1>Brands </h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
-           <li class="breadcrumb-item"><a href="{{route('admin.orders.index')}}">Orders</a></li>
+           <li class="breadcrumb-item"><a href="{{route('user.orders.index')}}">Orders</a></li>
           <li class="breadcrumb-item active">show</li>
         </ol>
       </nav>

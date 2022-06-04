@@ -13,13 +13,13 @@ class OrderController extends Controller
 	{
 	    $orders = Orders::orderBy('id','desc')->paginate(5);;
 
-	    return view('admin.orders.index', compact('orders'));
+	    return view('admin.pages.orders.index', compact('orders'));
 	}
 
 	public function show($orderNumber)
 	{
 	    $order = Orders::where('id',$orderNumber)->first();
 
-	    return view('admin.orders.show', compact('order'));
+	    return view('admin.pages.orders.show', compact('order'));
 	}
 }
