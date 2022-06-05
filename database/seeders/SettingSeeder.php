@@ -15,7 +15,7 @@ class SettingSeeder extends Seeder
     {
 
     	$setting_info = [
-    		 "logo" => '/',
+    		 "logo" => '/images/logo.png',
              "currency" => "INR",
              "currency_symbol" => "₹",             
     	];        
