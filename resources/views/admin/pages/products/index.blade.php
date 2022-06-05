@@ -40,7 +40,7 @@
                                 <tr>
                                      <td>
                                     @if($product->image)
-                  <img src="{{ asset('images/product/'.$product->image) }}" style="height: 100px; width: 150px;">
+                  <img src="{{ asset('images/product/'.$product->image) }}" style="height: 100px; width: 100px;">
                                     @endif
                                     </td>                                                              
                                     <td>{{ $product->name }}</td>

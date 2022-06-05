@@ -33,7 +33,7 @@
                                 <tr>
                                    <th scope="row">
                                     @if($brand->image)
-                  <img src="{{ asset('images/brand/'.$brand->image) }}" style="height: 100px; width: 150px;">
+                  <img src="{{ asset('images/brand/'.$brand->image) }}" style="height: 100px; width: 100px;">
                                     @endif
                                     </th>                                                            
                                     <td>{{ $brand->name }}</td> 

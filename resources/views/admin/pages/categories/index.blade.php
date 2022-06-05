@@ -33,7 +33,7 @@
                                                 <tr>
                                                        <td>
                                     @if($category->image)
-                  <img src="{{ asset('images/category/'.$category->image) }}" style="height: 100px; width: 150px;">
+                  <img src="{{ asset('images/category/'.$category->image) }}" style="height: 100px; width: 100px;">
                                     @endif
                                     </td>                               
                                                     <td>{{ $category->name }}</td>

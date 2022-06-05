@@ -20,27 +20,27 @@ class CategorySeeder extends Seeder
                         [
                         'name' => 'Charger',
                         'description' => 'Mobiles & Accessories',
-                        'image' =>''               
+                        'image' =>'/default.png'               
                         ],
                         [
                         'name' => 'Covers',
                         'description' => 'Mobiles & Accessories',
-                        'image' =>''               
+                        'image' =>'/default.png'               
                         ],
                         [
                         'name' => 'Data Cables',
                         'description' => 'Mobiles & Accessories',
-                        'image' =>''               
+                        'image' =>'/default.png'               
                         ],
                          [
                         'name' => 'Power Bank',
                         'description' => 'Mobiles & Accessories',
-                        'image' =>''               
+                        'image' =>'/default.png'               
                         ],
                         [
                         'name' => 'Screen Gards',
                         'description' => 'Mobiles & Accessories',
-                        'image' =>''               
+                        'image' =>'/default.png'               
                         ]
                 ];
 

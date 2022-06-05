@@ -19,27 +19,27 @@ class BrandSeeder extends Seeder
     	                [
     		            'name' => 'Redmi',
     		            'description' => 'Mobiles & Accessories',
-    		            'image' =>''               
+    		            'image' =>'/default.png'               
     	            	],
                         [
                         'name' => 'boAt',
                         'description' => 'Mobiles & Accessories',
-                        'image' =>''               
+                        'image' =>'/default.png'               
                         ],
                         [
                         'name' => 'OnePlus',
                         'description' => 'Mobiles & Accessories',
-                        'image' =>''               
+                        'image' =>'/default.png'               
                         ],
                          [
                         'name' => 'realme',
                         'description' => 'Mobiles & Accessories',
-                        'image' =>''               
+                        'image' =>'/default.png'               
                         ],
                         [
                         'name' => 'Samsung',
                         'description' => 'Mobiles & Accessories',
-                        'image' =>''               
+                        'image' =>'/default.png'               
                         ]
                 ];
 
