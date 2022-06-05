@@ -16,13 +16,37 @@ class CategorySeeder extends Seeder
     {
     	if(Category::count() <=0) {
     		
-	        $categories = [	              
-		            'name' => 'Category name2',
-		            'description' => '',
-		            'image' =>''	             
-	    	];
+	        $categories = [ 
+                        [
+                        'name' => 'Charger',
+                        'description' => 'Mobiles & Accessories',
+                        'image' =>''               
+                        ],
+                        [
+                        'name' => 'Covers',
+                        'description' => 'Mobiles & Accessories',
+                        'image' =>''               
+                        ],
+                        [
+                        'name' => 'Data Cables',
+                        'description' => 'Mobiles & Accessories',
+                        'image' =>''               
+                        ],
+                         [
+                        'name' => 'Power Bank',
+                        'description' => 'Mobiles & Accessories',
+                        'image' =>''               
+                        ],
+                        [
+                        'name' => 'Screen Gards',
+                        'description' => 'Mobiles & Accessories',
+                        'image' =>''               
+                        ]
+                ];
 
-         Category::create($categories);
+         foreach ($categories as $key => $value) {
+                   Category::create($value);
+                }
      }
     }
 }

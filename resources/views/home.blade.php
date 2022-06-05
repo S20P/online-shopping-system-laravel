@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 @section('content')
 
-<section class="section-pagetop bg-dark">
+<section class="section-pagetop bg-light py-2">
     <div class="container clearfix">
         <h2 class="title-page">Home</h2>
     </div>
@@ -11,7 +11,7 @@
         <div id="code_prod_complex">
             <div class="row">
                 @forelse($products as $product)
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <figure class="card card-product">
                             @if ($product->image)
                                 <div class="img-wrap padding-y"><img src="{{ asset('images/product/'.$product->image) }}" width="100px" alt=""></div>
@@ -40,8 +40,8 @@
                                     <input type="hidden" value="{{ $product->sale_price }}" name="price">
                                     <input type="hidden" value="{{ $product->image }}"  name="image">
                                     <input type="hidden" value="1" name="quantity">
-                                    <button class="px-4 py-2 text-white bg-dark rounded">Add To Cart</button>
-                                      <button class="px-4 py-2 text-white bg-dark rounded">Buy Now</button>
+                                    <button class="text-white bg-black  rounded">Add To Cart</button>
+                                      <button class="text-white bg-black  rounded">Buy Now</button>
                                 </form>
                             </div>
                         </figure>

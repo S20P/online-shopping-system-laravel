@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\CustomerController;
 
 Route::get('/login', [AdminAuthController::class, 'getLogin'])->name('admin.login');
 Route::post('/login', [AdminAuthController::class, 'postLogin'])->name('admin.login');
@@ -76,5 +77,13 @@ Route::group(['middleware' => 'adminauth'], function () {
 
   // @end:://orders
 
+
+
+  //Customers
+      Route::group(['prefix' => 'customers'], function () {
+           Route::get('/', [CustomerController::class,'index'])->name('admin.customers.index');	
+       });
+
+  // @end:://Customers
 
 });

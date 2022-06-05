@@ -33,7 +33,7 @@
 
 
 <!-- ======= Footer ======= --> 
- @include('admin.partials.footer')
+
  @include('admin.partials.footer-scripts')
  <!-- =======END Footer ======= -->
    

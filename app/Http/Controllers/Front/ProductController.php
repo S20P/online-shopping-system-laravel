@@ -10,7 +10,7 @@ class ProductController extends Controller
 {
     public function findProductBySlug($slug)
 	{
-	     $product = Products::where('slug', $slug)->first();
+	     $product = Products::with('images')->where('slug', $slug)->first();
 
 	     return view('front.product.show', compact('product'));
 	}

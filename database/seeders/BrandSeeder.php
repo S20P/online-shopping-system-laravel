@@ -15,14 +15,39 @@ class BrandSeeder extends Seeder
     {
     	if(Brands::count() <=0) {
 
-	    	$brands = 
-	              [
-		            'name' => 'brand name2',
-		            'description' => '',
-		            'image' =>''               
-	            	];
+	    	$brands = [ 
+    	                [
+    		            'name' => 'Redmi',
+    		            'description' => 'Mobiles & Accessories',
+    		            'image' =>''               
+    	            	],
+                        [
+                        'name' => 'boAt',
+                        'description' => 'Mobiles & Accessories',
+                        'image' =>''               
+                        ],
+                        [
+                        'name' => 'OnePlus',
+                        'description' => 'Mobiles & Accessories',
+                        'image' =>''               
+                        ],
+                         [
+                        'name' => 'realme',
+                        'description' => 'Mobiles & Accessories',
+                        'image' =>''               
+                        ],
+                        [
+                        'name' => 'Samsung',
+                        'description' => 'Mobiles & Accessories',
+                        'image' =>''               
+                        ]
+                ];
 
-            Brands::create($brands);
+                foreach ($brands as $key => $value) {
+                   Brands::create($value);
+                }
+
+            
         }
     }
 }

@@ -60,27 +60,6 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-
-                          <div class="form-group">
-                                <label for="address">Address</label>
-                                <input class="form-control" type="text" name="address" id="address" value="{{ old('address') }}">
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="city">City</label>
-                                    <input type="text" class="form-control" name="city" id="city" value="{{ old('city') }}">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="country">Country</label>
-                                    <select id="country" class="form-control" name="country">
-                                        <option> Choose...</option>
-                                        <option value="United Kingdom">United Kingdom</option>
-                                        <option value="France">France</option>
-                                        <option value="United States" selected="">United States</option>
-                                    </select>
-                                </div>
-                            </div>
-
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

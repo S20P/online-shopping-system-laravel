@@ -4,6 +4,7 @@ use App\Http\Controllers\User\DashBoardController;
 use App\Http\Controllers\Front\CheckoutController;
 use App\Http\Controllers\Front\PaymentController;
 use App\Http\Controllers\User\OrderController;
+use App\Http\Controllers\User\ProfileController;
 
 
 Route::group(['middleware' => 'auth'], function () {
@@ -12,6 +13,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/',[DashBoardController::class,'dashboard'])->name('user.dashboard');
 	Route::get('dashboard',[DashBoardController::class,'dashboard'])->name('user.dashboard');
 
+   Route::get('profile',[ProfileController::class,'getProfile'])->name('user.profile');
+   Route::post('profile/update',[ProfileController::class,'updateProfile'])->name('user.profile.save');
 
    Route::get('checkout',[CheckoutController::class,'getCheckout'])->name('checkout.index');
    Route::post('checkout/order',[CheckoutController::class,'placeOrder'])->name('checkout.place.order');

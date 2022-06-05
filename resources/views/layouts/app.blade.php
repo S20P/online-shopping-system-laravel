@@ -1,28 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+     <!-- CSRF Token -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-    <script src="{{ asset('js/app.js') }}" defer></script>
-     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <title>Online shopping System</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+ 
+   @include('partials.head')
 
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+
+  <div id="app">
+  <!-- ======= Header ======= -->
+ <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                     @if(generalSetting('logo') !== '') 
+                    <img src="{{asset(generalSetting('logo'))}}" class="head-logo">
+                     @else
+                       Online Shopping System
+                     @endif
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -68,14 +72,24 @@
                                 </div>
                             </li>
                         @endguest
+
                     </ul>
                 </div>
             </div>
         </nav>
+  <!-- =======END Header ======= -->
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+     <main class="py-4">
+        @yield('content')  
+     </main>  
+
+   </div>
+
+
+<!-- ======= Footer ======= --> 
+ @include('partials.footer')
+ @include('partials.footer-scripts')
+ <!-- =======END Footer ======= -->
+   
 </body>
 </html>

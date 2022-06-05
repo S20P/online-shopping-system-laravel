@@ -15,7 +15,7 @@ class OrderController extends Controller
 
        $user = Auth::user();
 		
-	    $orders = Orders::where('user_id',$user->id)->orderBy('id','desc')->paginate(5);;
+	    $orders = Orders::where('user_id',$user->id)->orderBy('id','desc')->paginate(5);
 
 	    return view('user.pages.orders.index', compact('orders'));
 	}

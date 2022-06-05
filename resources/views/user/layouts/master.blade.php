@@ -29,7 +29,7 @@
 
 
 <!-- ======= Footer ======= --> 
- @include('user.partials.footer')
+
  @include('user.partials.footer-scripts')
  <!-- =======END Footer ======= -->
    

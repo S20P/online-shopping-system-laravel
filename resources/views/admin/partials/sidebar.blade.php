@@ -32,11 +32,12 @@
       </li>
 
        <li class="nav-item">
-        <a class="nav-link collapsed" href="{{route('admin.settings.edit')}}">
-          <i class="bi bi-gear"></i>
-          <span>General Settings</span>
+        <a class="nav-link collapsed" href="{{route('admin.customers.index')}}">
+          <i class="bi bi-people"></i>
+          <span>Customers</span>
         </a>
       </li>
+
 
       <li class="nav-item">
         <a class="nav-link collapsed {{ Route::currentRouteName() == 'admin.orders.index' ? 'active' : '' }}" href="{{route('admin.orders.index')}}">
@@ -44,6 +45,15 @@
           <span>Orders</span>
         </a>
       </li>
+      
+
+       <li class="nav-item">
+        <a class="nav-link collapsed" href="{{route('admin.settings.edit')}}">
+          <i class="bi bi-gear"></i>
+          <span>General Settings</span>
+        </a>
+      </li>
+
 
 
     </ul>

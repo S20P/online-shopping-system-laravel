@@ -17,6 +17,13 @@
         </a>
       </li>
 
+       <li class="nav-item">
+        <a class="nav-link collapsed {{ Route::currentRouteName() == 'user.profile' ? 'active' : '' }}" href="{{route('user.profile')}}">
+          <i class="bi bi-person"></i>
+          <span>Profile</span>
+        </a>
+      </li>
+
 
     </ul>
 
